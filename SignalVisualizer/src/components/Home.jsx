@@ -24,8 +24,6 @@ const Home = () => {
         <br />
         <img src={digitalSignal} alt="DigitalSignal" />
       </div>
-
-
     </div>
   )
 }

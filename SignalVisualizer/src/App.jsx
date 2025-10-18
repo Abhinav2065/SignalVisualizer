@@ -1,17 +1,23 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import './index.css'
 
 function App() {
-
   return (
-    <>
+    <Router>
       <Navbar/>
-      <Hero/>
-      <Home/>
-    </>
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Hero/>
+            <Home/>
+          </>
+        }/>
+      </Routes>
+    </Router>
   )
 }
 
