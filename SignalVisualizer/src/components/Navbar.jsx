@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Navbar.css'
 
 
@@ -7,10 +8,10 @@ const Navbar = () => {
     <div>
         <div className="navbar">
             <ul>
-                <li>Home</li>
-                <li>Analog Signals</li>
-                <li>Digital Signals</li>
-                <li>Periodic Signals</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/digital">Digital Signal</Link></li>
+                <li><Link to="/analog">Analog Signal</Link></li>
+                <li><Link to="/pwm">PWM signal</Link></li>
             </ul>
         </div>
     </div>
