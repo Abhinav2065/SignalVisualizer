@@ -1,0 +1,18 @@
+.signals {
+    height: 50%;
+    text-align: right;
+    max-width: 40%;
+    padding-left: 50vw;
+}
+
+.signals h3 {
+    font-size: 30px;
+}
+
+.signals p {
+    font-size: 19px;
+}
+
+.image {
+    
+}
