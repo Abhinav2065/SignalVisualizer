@@ -19,3 +19,17 @@
 .image {
     border-radius: 40px;
 }
+
+
+.example {
+    padding-top: 20vh;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.example img {
+    width: 40%;
+    padding-top: 3vh;
+}
