@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Digital from './components/Digital';
+import Analog from './components/Analog';
 import './index.css'
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
           <Digital/>
           </>
         }/>
+        <Route path='/analog' element={
+          <>
+          <Analog/>
+          </>
+        } />
       </Routes>
     </Router>
   )

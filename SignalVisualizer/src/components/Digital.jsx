@@ -132,7 +132,7 @@ const Digital = () => {
                                 cx={x}
                                 cy={y}
                                 r="4"
-                                fill="#2196F3"
+                                fill="#59adf0ff"
                             />
                         );
                     })}
