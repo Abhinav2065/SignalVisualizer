@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Digital from './components/Digital';
 import Analog from './components/Analog';
+import PWM from './components/PWM';
 import './index.css'
 
 function App() {
@@ -26,6 +27,12 @@ function App() {
         <Route path='/analog' element={
           <>
           <Analog/>
+          </>
+        } />
+
+        <Route path='/pwm' element= {
+          <>
+          <PWM/>
           </>
         } />
       </Routes>

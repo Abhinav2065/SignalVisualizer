@@ -44,25 +44,6 @@ const Analog = () => {
         return simulatedData;
     };
 
-    const startFMSignal = () => {
-        setIsRadioActive(true);
-        
-        const updateSignal = () => {
-            if (!isRadioActive) return;
-            const newData = generateFMSignal();
-            setAudioData(newData);
-            animationRef.current = requestAnimationFrame(updateSignal);
-        };
-        
-        updateSignal();
-    };
-
-    const stopFMSignal = () => {
-        setIsRadioActive(false);
-        if (animationRef.current) {
-            cancelAnimationFrame(animationRef.current);
-        }
-    };
 
     const createFMSignalPath = () => {
         if (audioData.length === 0) return '';
@@ -233,14 +214,7 @@ const Analog = () => {
                     <h3>FM Signal Simulation</h3>
                     <p>This shows a simulated FM radio signal waveform.</p>
 
-                    <div className="fm-controls">
-                        <button onClick={startFMSignal} disabled={isRadioActive}>
-                            {isRadioActive ? ' Analyzing...' : ' Start FM Analysis'}
-                        </button>
-                        <button onClick={stopFMSignal} disabled={!isRadioActive}>
-                             Stop Analysis
-                        </button>
-                    </div>
+
 
                     <div className="fm-visualization">
                         <h4>FM Signal Waveform</h4>
@@ -261,19 +235,6 @@ const Analog = () => {
                             
                             {createFrequencyBars()}
                         </svg>
-
-                        <div className="signal-info">
-                            <div className="info-card">
-                                <h4>FM Signal Properties</h4>
-                                <p><strong>Status:</strong> 
-                                    <span style={{color: isRadioActive ? '#4CAF50' : '#f44336', marginLeft: '10px'}}>
-                                        {isRadioActive ? '📡 Signal Analysis' : '⏸️ Analysis Stopped'}
-                                    </span>
-                                </p>
-                                <p><strong>Data Points:</strong> {audioData.length} samples</p>
-                                <p><strong>Signal Type:</strong> Simulated FM Broadcast</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

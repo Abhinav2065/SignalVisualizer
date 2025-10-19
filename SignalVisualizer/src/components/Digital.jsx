@@ -7,7 +7,7 @@ const Digital = () => {
     const [signal, setSignal] = useState([]);
     const [isActive, setIsActive] = useState(false);
 
-    const getSignal = (len) => {
+    const getSignal = (len) => {    
         return Array.from({len}, () => Math.round(Math.random()));
     }
 
