@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Digital from './components/Digital';
 import './index.css'
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
           <>
             <Hero/>
             <Home/>
+          </>
+        }/>
+        <Route path='/digital' element={
+          <>
+          <Digital/>
           </>
         }/>
       </Routes>

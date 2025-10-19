@@ -1,0 +1,29 @@
+.digital {
+    text-align: center;
+}
+
+
+.signal-svg {
+    padding-top: 1vh;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+}
+
+
+button {
+    height: 40px;
+    width: 100px;
+    background-color:cornflowerblue;
+    border: none;
+    margin: 1%;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+
+
+button:hover {
+    background-color: rgb(116, 159, 238);
+    transform: scale(1.05);
+}
