@@ -1,3 +1,7 @@
+.pwm {
+    text-align: center;
+}
+
 .content {
     width: 60%;
     padding-left: 20%;
@@ -11,4 +15,36 @@
 
 .pwm-hero p {
     font-size: 26px;
+}
+
+.graph-50 {
+    padding-top: 5vh;
+}
+
+.slider-container {
+    margin: 20px 0;
+}
+
+.duty-slider {
+    width: 300px;
+    margin: 10px;
+}
+
+.custom-pwm {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pwm-info {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #2196F3;
+}
+
+.signal-svg {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
 }
