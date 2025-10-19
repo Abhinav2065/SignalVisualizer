@@ -57,12 +57,12 @@ const Digital = () => {
             return '';
         }
         
-        let path = `M 0 ${signal[0] === 1 ? 30 : 70}`;  // Starting Point
+        let path = `M 0 ${signal[0] === 1 ? 0 : 100}`;  // Starting Point
 
         signal.forEach((bit,index) => {    //looping through bits
             
             const x = index *40 +20;
-            const y = bit===1? 30:70;
+            const y = bit===1? 0:100;
             
             path = path + `L ${x} ${y}`;
 
@@ -110,11 +110,11 @@ const Digital = () => {
             <svg width="800" height="200" viewBox="0 0 800 100" className="signal-svg">   // middle line
             <line x1="0" y1="50" x2="800" y2="50" stroke="#e0e0e0" strokeWidth="1" />
 
-            <line x1="0" y1="30" x2="800" y2="30" stroke="#4CAF50" strokeWidth="1" strokeDasharray="5,5" />
-            <text x="10" y="25" fontSize="12">High (1)</text>   // high line
+            <line x1="0" y1="0" x2="800" y2="0" stroke="#4CAF50" strokeWidth="1" strokeDasharray="5,5" />
+            <text x="10" y="-10" fontSize="12">High (1)</text>   // high line
             
-            <line x1="0" y1="70" x2="800" y2="70" stroke="#F44336" strokeWidth="1" strokeDasharray="5,5" />
-            <text x="10" y="75"  fontSize="12">Low (0)</text>  // low line
+            <line x1="0" y1="100" x2="800" y2="100" stroke="#F44336" strokeWidth="1" strokeDasharray="5,5" />
+            <text x="10" y="110"  fontSize="12">Low (0)</text>  // low line
 
                                 <path 
                         d={makeSignalPath()} 
@@ -125,7 +125,7 @@ const Digital = () => {
                     
                     {signal.map((bit, index) => {      // graph making
                         const x = (index * 40) + 20;
-                        const y = bit === 1 ? 30 : 70;
+                        const y = bit === 1 ? 0 : 100;
                         return (
                             <circle
                                 key={index}
@@ -140,7 +140,13 @@ const Digital = () => {
 
             </svg>
         </div>
-
+        
+        <div className="other-text">
+            <p>A electrical device runs on these types of digital signal. Here in this graph we have two values 0 and 1. <br /> These are called Bits.
+                We can see that in a certain time a signal can either be 1 or 0. This is like a switch, it can either be turned on or off at a time. <br />
+                If the switch is on then let it be 1 and if it is off then let it be 0. These 0s and 1s make our digital device that we use.
+            </p>
+        </div>
     </div>
     </div>
   )
