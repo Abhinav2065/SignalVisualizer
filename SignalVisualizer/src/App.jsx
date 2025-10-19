@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Digital from './components/Digital';
 import Analog from './components/Analog';
 import PWM from './components/PWM';
+import Power from './components/Power';
 import './index.css'
 
 function App() {
@@ -33,6 +34,11 @@ function App() {
         <Route path='/pwm' element= {
           <>
           <PWM/>
+          </>
+        } />
+        <Route path='/power' element={
+          <>
+          <Power/>
           </>
         } />
       </Routes>

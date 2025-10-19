@@ -12,6 +12,7 @@ const Navbar = () => {
                 <li><Link to="/digital">Digital Signal</Link></li>
                 <li><Link to="/analog">Analog Signal</Link></li>
                 <li><Link to="/pwm">PWM signal</Link></li>
+                <li><Link to='/power'>Power Signal</Link></li>
             </ul>
         </div>
     </div>
