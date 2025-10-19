@@ -3,6 +3,7 @@ import '../styles/Power.css'
 
 const Power = () => {
     const [acWave, setAcWave] = useState([])
+    const [dcWave, setDcWave] = useState([])
     const [phase, setPhase] = useState(0)
 
     useEffect(() => {
@@ -15,7 +16,22 @@ const Power = () => {
             }
             return wave
         }
+
         setAcWave(generateACWave())
+    }, [phase])
+
+
+    useEffect(() => {
+        const generateDCWave = () => {
+            const wave = []
+            for (let i = 0; i < 100; i++) {
+                const x = (i / 100) * 400
+                const y = 50 + 40 * Math.sin(2 * Math.PI * (i / 100) * 2 + phase)
+                wave.push({ x, y })
+            }
+            return wave
+        }
+        setDcWave(generateDCWave())
     }, [phase])
 
     useEffect(() => {
@@ -30,6 +46,19 @@ const Power = () => {
         let path = `M ${acWave[0].x} ${acWave[0].y}`
         acWave.forEach((point, index) => {
             if (index > 0) path += ` L ${point.x} ${point.y}`
+        })
+        return path
+    }
+
+
+    const createDCPath = () => {
+        if (dcWave.length === 0 ) {
+            return ''
+        }
+
+        let path = `M ${dcWave[0].x} ${dcWave[0].y/2}`
+        dcWave.forEach((point, index) => {
+            if (index > 0) path += ` L ${point.x} ${point.y/2}`
         })
         return path
     }
@@ -80,8 +109,29 @@ const Power = () => {
 
 
                 <div className="dc">
+                    <h3>This is an example of DC Signal.</h3>
+                    <p>In this graph you can see the DC signal flowing in a direction.</p>
+
+                    <svg width="800" height="200" viewBox="0 0 400 100" className="ac-svg">
+                        <line x1="0" y1="50" x2="400" y2="50" stroke="#e0e0e0" strokeWidth="1" />
+                        <line x1="0" y1="10" x2="400" y2="10" stroke="#4CAF50" strokeWidth="1" strokeDasharray="5,5" />
+                        <line x1="0" y1="90" x2="400" y2="90" stroke="#4CAF50" strokeWidth="1" strokeDasharray="5,5" />
+                        <text x="10" y="15" fontSize="12">+230V</text>
+                        <text x="10" y="95" fontSize="12">-230V</text>
+                        <text x="350" y="95" fontSize="12">Time →</text>
+                        <path 
+                            d={createDCPath()} 
+                            stroke="#2196F3" 
+                            strokeWidth="3" 
+                            fill="none"
+                        />
+                    </svg>
                     
+
                 </div>
+
+
+                
             </div>
         </div>
     )
