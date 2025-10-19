@@ -22,7 +22,7 @@
 button {
     height: 40px;
     width: 100px;
-    background-color:cornflowerblue;
+    background-color:#23CE6B;
     border: none;
     margin: 1%;
     cursor: pointer;
@@ -32,6 +32,6 @@ button {
 
 
 button:hover {
-    background-color: rgb(116, 159, 238);
+    background-color: #2ed272;
     transform: scale(1.05);
 }
